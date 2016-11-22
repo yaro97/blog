@@ -9,42 +9,32 @@ tags:
 
 参考官网:https://hexo.io/docs  
 参考网站1:http://jiji262.github.io  
-[参考网站2](http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more)
+参考网站2:http://sufaith.com/2016/02/27/Hexo%E8%BF%81%E7%A7%BB/
 
 ## 安装Hexo
 
-Hexo安装需要安装`Node.js`和`Git`.二者的安装可以到相应的官网下载安装即可.注意`apt-get`安装的`Node.js`不是最新版本.  
-倘若遇到问题,可以参考[hexo官网](https://hexo.io/docs  ).
+Hexo需要安装`Node.js`和`Git`.二者的安装可以到相应的官网下载安装即可.注意`apt-get`安装的`Node.js`不是最新版本. 具体参考[hexo官网](https://hexo.io/docs  ).  
+
+在任意目录下(如`E\hexo`)文件夹中运行
 
 ```bash
 npm install hexo-cli -g 
 ```
 
-## 创建Github pages
-
-- 在线创建库并起名`yaro97.github.io`,在设置中通过` Launch automatic page generator`生成github page即可  
-**注意:**`name`要是唯一的话,生成的网址为`name.github.io`,若不唯一,网址为`yaro97.github.com/name.github.io`
-- 克隆远程库到本地文件夹`yaro97.github.io`(一般在user目录下)  
-`git clone https://github.com/yaro97/yaro97.github.io.git`
-- 本地创建并切换至`hexo`分支  
-`git checkout -b hexo`
-- 把当前hexo分支push到远程  
-`git push --set-upstream origin hexo`
-- 远程把`hexo`分支设为默认分支  
-hexo分支用于存储原始文件,master用于存储生成的网页静态文件.
-
-<!--more-->
+注:卸载hexo可尝试`npm uninstall hexo-cli`.
 
 ## 初始化Hexo
 
-在`yaro97.github.io`文件夹中运行
+在相应目录下(如`E\hexo`)文件夹中运行
 
 ```bash
 hexo init blog #建立文件夹`blog`,并在其中初始化hexo
-cd blog 
+cd blog #进入`blog`目录
 npm install #npm安装package.json中的依赖包
 npm install hexo-deployer-git --save #安装deploy插件,后续部署github需要.
 ```
+
+<!--more-->
 
 初始化完成后,可以`hexo generate`,`hexo server`查看是否能正常访问本地博客`http://localhost:4000`.  
 安装成功后可以使用`hexo -v`查看本地配置环境
@@ -53,9 +43,9 @@ npm install hexo-deployer-git --save #安装deploy插件,后续部署github需�
 
 ### 下载主题
 
-- 可以直接下载相关zip文件,解压缩到`.../hexo/blog/`文件夹下
+- 可以直接下载相关zip文件,解压缩到`.../hexo/themes`文件夹下
 
-- 可以在`blog`目录下运行`git clone https://github.com/iissnan/hexo-theme-next themes/next`将next主题下载到themes文件夹下.
+- 可以在`blog`目录下运行`git clone https://github.com/iissnan/hexo-theme-next themes/next`将next主题下载到themes文件夹下(推荐,可以使用`git pull`更新主题).
 
 ### 启用主题
 
@@ -68,21 +58,26 @@ hexo s #重新启动本地web服务器
 
 主题的其他设置见next主题[官网](http://theme-next.iissnan.com/).
 
+## 创建Github pages
+
+- 在线创建库并起名`yaro97.github.io`,在设置中通过` Launch automatic page generator`生成github page即可  
+**注意:**`name`要是唯一的话,生成的网址为`name.github.io`,若不唯一,网址为`yaro97.github.com/name.github.io`
+
 ## 部署本地Hexo到Github pages
 
 - 注意部署前一定要安装插件`hexo-deployer-git`.前面已经安装
 
 - 修改`_config.xml`文件
 
-```
-deploy:
-    type: git
-    repo: https://github.com/yaro97/yaro97.github.io.git
-    branch: master
-    name: yaro
-    email: wyzh97@gmail.com
-# 注意这里是上传至master分支.具体设置可以参考hexo官网.
-```
+    ```bash
+    deploy:
+        type: git
+        repo: https://github.com/yaro97/yaro97.github.io.git
+        branch: master
+        name: yaro
+        email: wyzh97@gmail.com
+    # 具体设置可以参考hexo官网.
+    ```
 
 - 执行命令`hexo d`完成部署,过程中需要github账号/密码,账号为`yaro97`.
 
@@ -92,14 +87,14 @@ deploy:
 
 - 在新建的`repository`中新建文件`CNAME`,内容填写:
     
-    ```
+    ```bash
     www.paotime.com
     paotimecom
     ```
 
 - 在阿里云中,添加域名解析,内容如下:
 
-    ```
+    ```bash
     记录类型:A; 主机记录:@; 记录值:192.30.252.153.
     记录类型:A; 主机记录:www; 记录值:192.30.252.153.
     ```
@@ -108,31 +103,92 @@ deploy:
 
 - 在新建的`repository`中新建文件`CNAME`,内容填写:
 
-    ```
+    ```bash
     blog.paotime.com
     ```
 
 - 在阿里云中,添加域名解析,内容如下:
 
-    ```
+    ```bash
     记录类型:CNAME; 主机记录:blog 记录值:paotime.github.io. #注意这个点`.`
     ```
 
+## 在两个台电脑同时更新
 
-## 日常博客管理流程
+### 对A电脑的操作如下
 
-### 日常修改
+1. 在github新建仓库名为blog
+2. 上传A电脑本地Hexo博客的源文件夹至github的blog仓库，流程如下：
 
-在本地对博客进行修改(添加新博文、修改样式等等)后,通过下面的流程进行管理:
+    - 删除根目录和主题目录下的.git文件夹
+    - 修改根目录下的.gitignore文件为：
 
-- 依次执行`git add .`、`git commit -m “…”`、`git push origin hexo`指令将改动推送到GitHub(此时当前分支应为hexo);  
-- 然后再执行`hexo g -d`发布网站到master分支上.
+        ```bash
+        /.deploy_git
+        /public
+        ```
 
-虽然两个过程顺序调转一般不会有问题,不过逻辑上这样的顺序是绝对没问题的(例如突然死机要重装了,悲催….的情况,调转顺序就有问题了).
+    - 依次执行以下指令，同步源文件至github
 
-### 本地资料丢失
+        ```bash
+        git init 
+        git add .
+        # 若出现`warning: LF will be replaced by CRLF in`
+        # 执行:
+        # git config --global core.autocrlf  false
+        git commit -m "first commit"
+        git remote add origin git@github.com:yaro97/blog.git
+        git push -u origin master
+        # 此时可能会出错failed to push some refs to git  出现错误的主要原因是github中的README.md文件不在本地代码目录中，可以通过如下命令进行代码合并
+        # git pull --rebase origin master
+        # 此时再执行语句 
+        # git push -u origin master
+        ```
 
-当重装电脑之后,或者想在其他电脑上修改博客,可以使用下列步骤:
+### 对B电脑的操作如下：
 
-- 使用`git clone https://github.com/yaro97/yaro97.github.io.git`拷贝仓库(默认分支为hexo)；
-- 在本地新拷贝的`yaro97.github.io`文件夹下通过`Git bash`依次执行下列指令:`npm install hexo-cli -g`-`npm install`-`npm install hexo-deployer-git --save`(**记得,不需要`hexo init`这条指令)**.
+1. 安装Git，并配置github账号下的B电脑的.ssh
+2. 安装Node.js
+3. 使用npm指令安装Hexo  
+
+    ```bash
+    npm install -g hexo-cli
+    ```
+
+4. 使用Git bash随便选择一个文件夹,执行git clone
+
+    ```bash
+    git clone git@github.com:yaro97/blog.git
+    ```
+
+至此，两个电脑的hexo环境一致，Hexo博客源文件一致.倘若还有C电脑,重复B电脑的操作即可.  
+这里需要说明的是:在blog
+
+## 关于日常的改动流程（A，B两台电脑均使用的情况下）
+
+1. 建议先检查更新git pull，将本地博客源文件更新至最新版本
+
+    ```bash
+    git pull
+    ```
+
+2. 然后可以新建或修改博客内容，进行预览等操作
+
+    ```bash
+    hexo new <新的博客名称>
+    hexo server
+    ```
+
+3. 新建博客后，先同步Hexo源文件，将修改后的源文件同步至github
+
+    ```bash
+    git add . #不添加被删除的文件,`git add -A`会添加所有修改.
+    git commit -m "更新描述"
+    git push origin master
+    ```
+
+4. 然后再执行Hexo的生成文件和部署指令
+
+    ```bash
+    hexo g -d #hexo generate && hexo deploy
+    ```
