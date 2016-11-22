@@ -15,9 +15,9 @@ balabala...
 
 - linux安装
 
-	```
+	```bash
 	sudo apt install git
-	```  
+	```
 
 	> 早期的版本都是安装git-core,因为git=GNU interactive Tools,后来由于git名气太大,就用git了.
 
@@ -27,8 +27,9 @@ balabala...
 
 	> 说明:不要用记事本编辑任何文本文件,Microsoft开发记事本的团队使用了一个非常弱智的行为来保存UTF-8编码的文件，他们自作聪明地在每个文件开头添加了0xefbbbf（十六进制）的字符，你会遇到很多不可思议的问题.
 
+<!-- more -->
 
-## 配置
+## 配置git
 
 因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。
 
@@ -37,7 +38,7 @@ linux在:`/etc/gitconfig` 和 `~/.gitconfig`
 wins在:`C:\Documents and Settings\$USER`  
 可以在目录中直接编辑,也可以通过相应命令来配置.
 
-```
+```bash
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
 ```
@@ -46,7 +47,7 @@ git config --global user.email "email@example.com"
 
 此外还可以设置默认文本编辑器/差异分析工具/配色等等
 
-```
+```bash
 git config --global core.editor emacs
 git config --global merge.tool vimdiff
 ```
@@ -71,7 +72,7 @@ git config --global merge.tool vimdiff
 - 添加相应文件到缓存区,并提交到仓库.
 	如:
 
-	```
+	```bash
 	git add file1.txt
 	git add file2.txt file3.txt
 	git commit -m "add 3 files."
@@ -91,7 +92,7 @@ git config --global merge.tool vimdiff
 
 - 版本回退
 
-	```
+	```bash
 	git log #可以查看每次提交改动的历史记录
 	git log --pretty=oneline #可以一行显示一条
 	git reset --hard HEAD^ #退回当前版本的上一个版本
@@ -178,7 +179,7 @@ Git鼓励大量使用分支：
 
 突然接到任务要修复代号101的bug,很自然,你想创建一个分支`issue-101`来修复,但是当前`dev`分支上的工作还没有提交,并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
 
-```
+```bash
 git status #查看到在`dev`分支上的工作没有提交
 git stash #把当前工作现场“储藏”起来
 
@@ -207,7 +208,7 @@ git stash pop #恢复工作现场继续工作
 
 于是准备开发：
 
-```
+```bash
 git checkout -b feature-vulcan
 
 #5分钟后，开发完毕：
@@ -239,7 +240,7 @@ git merge feature-vulcan #将`feature-vulcan`分支合并到 `dev`分支
 
 - 创建标签
 
-	```
+	```bash
 	git branch #查看所有分支
 	git checkout master #切换到需要打标签的分支上
 	git tag v1.0 #打一个新标签

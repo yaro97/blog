@@ -27,6 +27,8 @@ Ubuntu[官网下载](http://cn.ubuntu.com/download/)镜像文件，可直接拖�
 
 我的实际分区情况：`/`40G，`swap`4g，`其他`全部给`home`分区。
 
+<!-- more -->
+
 ## 配置及安装软件
 
 ### 解决桌面闪屏问题
