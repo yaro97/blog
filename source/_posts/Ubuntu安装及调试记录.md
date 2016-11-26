@@ -65,7 +65,7 @@ Ubuntu[官网下载](http://cn.ubuntu.com/download/)镜像文件，可直接拖�
 		```bash
 		ln -s /home/kun/mysofltware/node-v0.10.26-linux-x64/bin/node /usr/local/bin/node
 		ln -s /home/kun/mysofltware/node-v0.10.26-linux-x64/bin/npm /usr/local/bin/npm
-		```  
+		```
 
 		通过如此，就可以访问Node了，同时node部署也已经完毕。
 
@@ -134,7 +134,7 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 	"timeout":600,
 	"method":"aes-256-cfb"
 	}
-	```    
+	```
 
 	可以访问搬瓦工[国内镜像](http://banwagong.cn/)查看最新SS相关配置参数。另外,服务器端重新安装系统难道SS会更快?有待证实.
 
