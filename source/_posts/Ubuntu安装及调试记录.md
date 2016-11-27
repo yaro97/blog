@@ -387,6 +387,10 @@ export LANG=zh_CN
 sudo apt-get remove apport
 ```
 
+### nautilus文件管理器打开“最近使用的”出错
+
+在文件`/usr/lib/systemd/user/gvfs-daemon.service`中添加一行`Environment=DISPLAY=:0`即可
+
 ### Ubuntu root 和user切换
 
 [参考网站1](http://www.cnblogs.com/weiweiqiao99/archive/2010/11/10/1873761.html)
