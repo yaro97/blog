@@ -333,7 +333,7 @@ sudo apt-get purge thunderbird totem rhythmbox empathy brasero simple-scan gnome
 `{font_face": "Droid Sans Fallback", "font_size": 14}`   
 备注4:查看中文字体名称可以输入`fc-list :lang=zh-cn`
 
-###设置开机启动常用项
+### 设置开机启动常用项
 
 需要开机启动的项目如搜狗输入法（依托于fcitx，启动fcitx）/SS/坚果云等
 
