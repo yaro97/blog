@@ -165,7 +165,7 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 执行以下命令安装
 
 ```bash
-sudo pip install shadowsocks
+sudo apt install shadowsocks
 ```
 
 上述命令会同时安装`sslocal`和`ssserver`两个程序,客户端用前者,服务器用后者.
@@ -181,7 +181,7 @@ sslocal: /usr/local/bin/sslocal
 创建配置文件
 
 ```bash
-sudo vim /home/yaro/.yaro/shadowsocks/shadowsocks.json   ##创建.json文件,任意目录,内容如下:
+sudo vim /home/yaro/Documents/shadowsocks/shadowsocks.json   ##创建.json文件,任意目录,内容如下:
 ```
 
 ```json
@@ -199,8 +199,8 @@ method":"aes-256-cfb"
 启动客户端
 
 ```bash
-sslocal -c  /home/yaro/.yaro/shadowsocks/shadowsocks.json #在终端运行,不能停止不能关闭
-sudo sslocal -c /home/yaro/.yaro/shadowsocks/shadowsocks.json -d start #后台运行
+sslocal -c  /home/yaro/Documents/shadowsocks/shadowsocks.json #在终端运行,不能停止不能关闭
+sudo sslocal -c /home/yaro/Documents/shadowsocks/shadowsocks.json -d start #后台运行
 #其他参数可以`sslocal --help`.
 ```
 
@@ -209,7 +209,7 @@ sudo sslocal -c /home/yaro/.yaro/shadowsocks/shadowsocks.json -d start #后台�
 > 早期的ubuntu版本可以通过写入`rc.local`的方式实现开机运行代码.
 > 
 > ```bash
-> sudo sslocal -c /home/yaro/.yaro/shadowsocks/shadowsocks.json -d start
+> sudo sslocal -c /home/yaro/Documents/shadowsocks/shadowsocks.json -d start
 > ```
 
 ubuntu15.04后,`rc.local`无效,开始使用systemd管理开机启动,可通过写入服务的方式实现开机运行:
@@ -232,7 +232,7 @@ After=network.target
 [Service]
 Type=simple
 User=yaro
-ExecStart=/usr/local/bin/sslocal -c /home/yaro/.yaro/shadowsocks/shadowsocks.json
+ExecStart=/usr/local/bin/sslocal -c /home/yaro/Documents/shadowsocks/shadowsocks.json
 
 [Install]
 WantedBy=multi-user.target
