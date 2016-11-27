@@ -331,7 +331,7 @@ sudo apt-get purge thunderbird totem rhythmbox empathy brasero simple-scan gnome
 备注2:sublime无法输入中文可以[参考网站1](https://github.com/lyfeyaj/sublime-text-imfix)和[参考网站2](http://www.jianshu.com/p/bf05fb3a4709)  
 备注3:sublime字体设置,打开`sublime`的`Preference-setting`在其中加入如下代码
 `{font_face": "Droid Sans Fallback", "font_size": 14}`   
-备注4:查看中文字体名称可以输入`fc-list :lang=zh-cn`
+备注4:查看中文字体名称可以输入`fc-list :lang=zh-cn`,`fc-list`(查看所有字体)
 
 ### 设置开机启动常用项
 
