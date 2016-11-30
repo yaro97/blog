@@ -126,11 +126,11 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 	```json   
 	{
-	"server":"104.128.87.111",
+	"server":"",
 	"server_port":443,
 	"local_address": "127.0.0.1",
 	"local_port":1080,
-	"password":"Mjg5NTIzMz",
+	"password":"",
 	"timeout":600,
 	"method":"aes-256-cfb"
 	}
@@ -186,11 +186,11 @@ sudo vim /home/yaro/Documents/shadowsocks/shadowsocks.json   ##创建.json文件
 
 ```json
 { 
-"server":"104.128.87.111", 
+"server":"", 
 "server_port":443, 
 "local_address": "127.0.0.1", 
 "local_port":1080,
-"password":"Mjg5NTIzMz", 
+"password":"", 
 "timeout":600, "
 method":"aes-256-cfb" 
 }
@@ -294,7 +294,7 @@ sudo proxychains apt install typora #前提要能访问typora的资源站(先FQ)
 
 proxychains配置文件中可以设置三种代理方式:动态代理(依次选择设定的代理方式,有一个可用即可),严格代理(依次选择,但是必须都能用),随机代理(随机选择设定的代理方式)
 
-类似软件:proxychains是只适用于linux/iOS系统,类似的还有polipo(让所有的程序全部走socks5代理),windows平台可以考虑privoxy.
+类似软件:proxychains是只适用于linux/iOS系统,类似的还有polipo(让所有的程序全部走socks5代理),windows平台可以考虑Proxifier.
 
 ### 卸载不常用软件
 
