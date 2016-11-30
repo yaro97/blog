@@ -76,5 +76,3 @@ deploy:
   type: git
   repo: https://github.com/yaro97/yaro97.github.io.git
   branch: master
-  name: yaro
-  email: wyzh97@gmail.com
