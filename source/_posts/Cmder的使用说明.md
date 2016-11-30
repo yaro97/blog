@@ -21,32 +21,40 @@ windows10可直接使用小娜搜索`环境变量`，然后将Cmder.exe`所在�
 
 ## 问题处理
 
-  * 避免中文字体重叠 win+alt+p 唤出设置界面 > mian > font > monospce,去掉那勾勾即可。 ![](https://box.kancloud.cn/68d613a419074a1dd42c8b017eba18ec_760x487.png)
+  * 避免中文字体重叠 win+alt+p 唤出设置界面 > mian > font > monospce,去掉那勾勾即可。 
+
+  ![](https://box.kancloud.cn/68d613a419074a1dd42c8b017eba18ec_760x487.png)
 
   * 避免中文乱码
 
     * 小于v1.3.0版本,编辑config/aliases.cmd文件，在末尾添加
         
-                l=ls --show-control-chars 
-        la=ls -aF --show-control-chars 
-        ll=ls -alF --show-control-chars
-        ls=ls --show-control-chars -F
-        
+		```
+		l=ls --show-control-chars 
+		la=ls -aF --show-control-chars 
+		ll=ls -alF --show-control-chars
+		ls=ls --show-control-chars -F
+		```
+	
+	注:貌似最新版已经加上这个代码了,而且没有`aliases.cmd`文件了  
+	**如果仍有乱码，可尝试 设置界面>Startup>Environment; 添加 `set LANG=zh_CN.UTF-8`设置默认语言**
+
 <!-- more -->
 
-注:貌似最新版已经加上这个代码了,而且没有`aliases.cmd`文件了  
-**如果仍有乱码，可尝试 设置界面>Startup>Environment; 添加 `set LANG=zh_CN.UTF-8`设置默认语言**
-<en-media style="height: auto;" type="image/png" hash="c09e82c54db128ed77910bc8c958a5f3"/>
+![](https://box.kancloud.cn/c09e82c54db128ed77910bc8c958a5f3_756x465.png)
 
   * 修改命令提示符号`λ`
 
-Cmder预设的命列列提示符号是λ;如果用着不习惯，可以将这个字元改成Mac / Linux环境下常见的$符号，具体操作如下：
+	Cmder预设的命列列提示符号是λ;如果用着不习惯，可以将这个字元改成Mac / Linux环境下常见的$符号，具体操作如下：
 
-大于1.3.0版本编辑Cmder安装目录下的`vendor\clink.lua` 41行：
-    
-        cmder_prompt = "\x1b[1;32;40m{cwd} {git}{hg} \n\x1b[1;30;40m{lamb} \x1b[0m"
-    
+	大于1.3.0版本编辑Cmder安装目录下的`vendor\clink.lua` 41行：
+	
+	```
+	cmder_prompt = "\x1b[1;32;40m{cwd} {git}{hg} \n\x1b[1;30;40m{lamb} \x1b[0m"
+	```
 
-修改成以下即可：
-    
-        cmder_prompt = "\x1b[1;32;40m{cwd} {git}{hg} \n\x1b[1;30;40m$ \x1b[0m"
+	修改成以下即可：
+	
+	```
+	cmder_prompt = "\x1b[1;32;40m{cwd} {git}{hg} \n\x1b[1;30;40m$ \x1b[0m"
+	```
