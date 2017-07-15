@@ -1,9 +1,9 @@
 hexo g
-git add .
+git add -A
 git commit -m “updateblogsource”
 git push origin master
-cp -R D:/tools/babun/.babun/cygwin/home/yaro/blog/public. D:/tools/babun/.babun/cygwin/home/yaro/yaro97.github.io/
-cd D:/tools/babun/.babun/cygwin/home/yaro/yaro97.github.io/
-git add .
+cp -R E:/hexo/blog/public/* E:/hexo/yaro97.github.io/
+cd E:/hexo/yaro97.github.io/
+git add -A
 git commit -m “updateblog”
 git push origin master
