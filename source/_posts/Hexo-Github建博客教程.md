@@ -5,6 +5,21 @@ tags:
 - github page
 - 搭建博客
 ---
+
+## 最新操作备忘
+
+```sh
+#安装git
+#安装hexo
+npm install hexo-cli -g 
+#在E盘下新建hexo文件夹
+git clone https://github.com/yaro97/blog.git
+git clone https://github.com/yaro97/yaro97.github.io.git
+#MD文件中要是又特殊字符记得放在代码段中，否则会报错
+#运行blog目录下的deploy.sh
+./deploy.sh
+```
+
 本人=一名小白,而且我对网站开发以及前端的知识几乎是零基础,所以在自己刚接触这个东西的时候,我像很多人一样,都是上网找教程,但是要知道,那都是程序员的教程.一路摸爬滚打,终于搞定了,这篇文章算是自己的操作记录,为以后的重新搭建留个备忘...
 
 参考官网:https://hexo.io/docs  
