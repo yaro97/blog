@@ -1,5 +1,6 @@
 ---
 title: 第9篇-Web框架-Tornado
+date: 2017-07-15 15:28:47
 tags:
 - python
 ---
@@ -137,9 +138,11 @@ ornado中原生支持二级域名的路由，如：
 
 Tornao中的模板语言和django中类似，模板引擎将模板文件载入内存，然后将数据嵌入其中，最终获取到一个完整的字符串，再将字符串返回给请求者。
 
+```
 Tornado 的模板支持“控制语句”和“表达语句”，控制语句是使用 `{%` 和 `%}` 包起来的 例如 `{% if len(items) > 2 %}`。表达语句是使用 `{{` 和 `}}` 包起来的，例如 `{{ items[0] }}`。
 
 控制语句和对应的 Python 语句的格式基本完全相同。我们支持 `if`、`for`、`while` 和 `try`，这些语句逻辑结束的位置需要用 `{% end %}` 做标记。还通过 `extends` 和 `block` 语句实现了模板继承。这些在 [`template` 模块](http://github.com/facebook/tornado/blob/master/tornado/template.py) 的代码文档中有着详细的描述。
+```
 
 注：在使用模板前需要在setting中设置模板路径："template_path" : "tpl"
 
@@ -1045,7 +1048,7 @@ if __name__ == "__main__":
  其他
 
 ```javascript
-		function bindChangeAvatar1() {
+        function bindChangeAvatar1() {
             $('#avatarImg').change(function () {
                 var file_obj = $(this)[0].files[0];
                 $('#prevViewImg')[0].src = window.URL.createObjectURL(file_obj)

@@ -1,5 +1,6 @@
 ---
-title: 第8篇-Py前端-AJAX
+title: 第8篇-Py前端-JS
+date: 2017-07-15 15:20:47
 tags:
 - python
 ---

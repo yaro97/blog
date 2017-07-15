@@ -1,5 +1,6 @@
 ---
 title: 第1篇-初识Py
+date: 2017-07-15 15:02:47
 tags:
 - python
 ---

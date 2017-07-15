@@ -1,5 +1,6 @@
 ---
 title: 第12篇-Django初级篇
+date: 2017-07-15 15:38:47
 tags:
 - python
 ---
@@ -100,9 +101,11 @@ url(r'^index/(\d*)', views.index, name='h2'),
 
 设置名称之后，可以在不同的地方调用，如：
 
+```
 - 模板中使用生成URL     {% url 'h2' 2012 %}
 - 函数中使用生成URL     reverse('h2', args=(2012,))      路径:django.urls.reverse
 - Model中使用获取URL  自定义get_absolute_url() 方法
+```
 
 ```python
 class NewType(models.Model):
@@ -164,8 +167,10 @@ def detail(request, pk):
 
 以上定义带命名空间的url之后，使用name生成URL时候，应该如下：
 
+```
 - v = reverse('app01:detail', kwargs={'pk':11})
 - {% url 'app01:detail' pk=12 pp=99 %}
+```
 
 django中的路由系统和其他语言的框架有所不同，在django中每一个请求的url都要有一条路由映射，这样才能将请求交给对一个的view中的函数去处理。其他大部分的Web框架则是对一类的url请求做一条路由映射，从而是路由系统变得简洁。
 
@@ -225,6 +230,7 @@ return render_to_response('Account/Login.html',data,context_instance=RequestCont
 
 模板中也有自己的语言，该语言可以实现数据展示
 
+```
 - {{ item }}
 - {% for item in item_list %}  <a>{{ item }}</a>  {% endfor %}
   　　forloop.counter
@@ -239,6 +245,7 @@ return render_to_response('Account/Login.html',data,context_instance=RequestCont
   {{ bio|truncatewords:"30" }}
   {{ my_list|first|upper }}
   {{ name|lower }}
+```
 
 #### 3、自定义simple_tag
 

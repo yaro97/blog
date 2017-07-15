@@ -1,5 +1,6 @@
 ---
-title: 第6篇-Py面向对象-其他篇
+title: 第8篇-Py前端-AJAX
+date: 2017-07-15 15:24:47
 tags:
 - python
 ---
