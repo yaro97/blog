@@ -1,5 +1,6 @@
 ---
-title: yaro_vitae
+title: 个人简历
+date: 2017-08-02 15:10:47
 tags:
 - vitae
 - 简历
@@ -64,7 +65,7 @@ tags:
 
 - Python语言：
 
-  半年前，从几家Python培训机构的内部教程入手开始学习Python，后续看了很多资料，感觉基础应该时没有问题了，后来整理了[**学习笔记**](https://yaro97.github.io/tags/python/) ；最近看了不少爬虫相关的教程，自己动手也写练习了些，给我的**错觉**是：貌似python也不是太难。
+  半年前，从几家Python培训机构的内部教程入手开始学习Python，后续看了很多资料，感觉基础应该时没有问题了，后来整理了 [**学习笔记**](https://yaro97.github.io/tags/python/)  ；最近看了不少爬虫相关的教程，自己动手也写练习了些，给我的**错觉**是：貌似python也不是太难。
 
   但是，看教程总是给人假象；当我买了《Python核心编程》(第三版)，我发现我错了，发现没有实践条件的我太小看这门语言了，书里面不少知识点是我还是停留在了解的阶段而已。
 
@@ -96,4 +97,4 @@ tags:
 
 
 
-## 附：以上经历的相关证明[扫描件链接](https://www.jianguoyun.com/p/DQkDqXwQ54kBGKW-MQ)
+## 附：以上经历的相关证明 [扫描件链接](https://www.jianguoyun.com/p/DQkDqXwQ54kBGKW-MQ) 
