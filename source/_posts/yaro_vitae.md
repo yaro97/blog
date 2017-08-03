@@ -73,11 +73,11 @@ tags:
 
 - 熟悉关系数据库mysql，了解redis、mongodb；
 
-- 算法相关：大学计算机基础学过一遍，现在还有点影响；
+- 算法相关：大学计算机基础学过一遍，现在还有点印象；
 
 - 前端技术还可以：html、css较好，JS一般，平时用Jquery代替；
 
-- 了解scrapy、beutifulsoup；
+- 了解scrapy、beautifulsoup；
 
 - numpy、pandas、R：前几天看了相关视频，有所了解；
 
